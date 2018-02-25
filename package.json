@@ -1,7 +1,7 @@
 {
   "version": "0.0.0-development",
   "name": "@benchci/schema",
-  "description": "JSON Schema for Bench CI configuration.",
+  "description": "JSON Schema for Bench CI configuration",
   "author": "Ahmad Nassri <ahmad@benchci.com> (https://www.bench.ci/)",
   "homepage": "https://github.com/benchci/schema",
   "repository": {
