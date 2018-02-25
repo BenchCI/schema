@@ -27,26 +27,66 @@
           ],
           "properties": {
             "name": {
-              "$ref": "#/definitions/nonEmptyString"
+              "$id": "#/definitions/command/properties/name",
+              "title": "Command Name",
+              "description": "Label to be used in UI",
+              "$ref": "#/definitions/nonEmptyString",
+              "examples": [
+                "Performance Test",
+                "Database Migration"
+              ]
             },
             "command": {
-              "$ref": "#/definitions/nonEmptyString"
+              "$id": "#/definitions/command/properties/command",
+              "title": "Command String",
+              "description": "CLI command to run via the shell",
+              "$ref": "#/definitions/nonEmptyString",
+              "examples": [
+                "npm run bench",
+                "node bench/performance.js"
+              ]
             },
             "background": {
+              "$id": "#/definitions/command/properties/background",
+              "title": "Background Process",
+              "description": "Whether this command runs in the background or not",
               "type": "boolean",
               "default": false
             },
             "timeout": {
+              "$id": "#/definitions/command/properties/timeout",
+              "title": "Command Timeout",
+              "description": "Elapsed time in milliseconds the command can run without output",
               "type":"number",
               "minimum": 1,
-              "default": 100
+              "default": 100,
+              "examples": [
+                30000,
+                120000
+              ]
             },
             "cwd": {
-              "$ref": "#/definitions/nonEmptyString"
+              "$id": "#/definitions/command/properties/cwd",
+              "title": "Working Directory",
+              "description": "In which directory to run this command",
+              "$ref": "#/definitions/nonEmptyString",
+              "examples": [
+                "/tmp",
+                "/app/",
+                "/var/www"
+              ]
             },
             "environment": {
+              "$id": "#/definitions/command/properties/environment",
+              "title": "Environments",
+              "description": "additional environment variables, locally scoped to command",
               "type": "object",
-              "uniqueItems": true
+              "uniqueItems": true,
+              "examples": [
+                {
+                  "NODE_ENV": "production"
+                }
+              ]
             }
           }
         }
@@ -64,13 +104,20 @@
       "type": "string"
     },
     "version": {
+      "$id": "#/properties/version",
+      "title": "Schema Version",
+      "description": "Used to determine what Bench Schema to validate against",
       "type": "string",
       "pattern": "\\bv?(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-[\\da-z-]+(?:\\.[\\da-z-]+)*)?(?:\\+[\\da-z-]+(?:\\.[\\da-z-]+)*)?\\b"
     },
     "jobs": {
+      "$id": "#/properties/jobs",
+      "title": "Jobs",
+      "description": "List of Commands to execute",
       "type": "array",
       "minItems": 1,
       "items": {
+        "$id": "#/properties/jobs/items",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -79,20 +126,38 @@
         ],
         "properties": {
           "name": {
-            "$ref": "#/definitions/nonEmptyString"
+            "$id": "#/properties/jobs/items/name",
+            "title": "Job Name",
+            "description": "Label to be used in the UI",
+            "$ref": "#/definitions/nonEmptyString",
+            "examples": [
+              "Performance Benchmark"
+            ]
           },
           "runs": {
+            "$id": "#/properties/jobs/items/runs",
+            "title": "Job Runs",
+            "description": "number of invocations for the benchmark",
             "type": "number",
             "minimum": 1,
             "default": 100
           },
           "benchmark": {
+            "$id": "#/properties/jobs/items/benchmark",
+            "title": "Job Benchmark",
+            "description": "A Command object to run as the benchmark",
             "$ref": "#/definitions/command"
           },
           "before": {
+            "$id": "#/properties/jobs/items/before",
+            "title": "Job Pre-Benchmark Steps",
+            "description": "List of Command objects to run before executing the benchmark command",
             "$ref": "#/definitions/commands"
           },
           "after": {
+            "$id": "#/properties/jobs/items/after",
+            "title": "Job Post-Benchmark Steps",
+            "description": "List of Command objects to run after executing the benchmark command",
             "$ref": "#/definitions/commands"
           }
         }
