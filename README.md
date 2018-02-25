@@ -15,7 +15,7 @@ version                | status
 Available as an `npm` package for validation purposes, compatible with any [JSON Schema][] validation tool
 
 ```bash
-npm install --production --save @bench/schema
+npm install --production --save @benchci/schema
 ```
 
 ---
@@ -28,9 +28,9 @@ npm install --production --save @bench/schema
 [license-image]: https://img.shields.io/github/license/benchci/schema.svg?style=flat-square
 [license-url]: http://choosealicense.com/licenses/isc/
 
-[npm-downloads]: https://img.shields.io/npm/dm/@bench/schema.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/@bench/schema
-[npm-version]: https://img.shields.io/npm/v/@bench/schema.svg?style=flat-square
+[npm-downloads]: https://img.shields.io/npm/dm/@benchci/schema.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/@benchci/schema
+[npm-version]: https://img.shields.io/npm/v/@benchci/schema.svg?style=flat-square
 
 [travis-image]: https://img.shields.io/travis/benchci/schema.svg?style=flat-square
 [travis-url]: https://travis-ci.org/benchci/schema
