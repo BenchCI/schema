@@ -45,7 +45,7 @@ The version of this spec your Bench file uses. Format must follow [semver][].
 
 An array that contains at least one [`benchmark`](#benchmark) object.
 
-### Benchmark
+### Job
 
 ```json
 {
@@ -59,8 +59,8 @@ An array that contains at least one [`benchmark`](#benchmark) object.
 
 name          | type     | required | default | description                                                                              
 ------------- | -------- | -------- | ------- | -----------------------------------------------------------------------------------------
-**name**      | `String` | ✔        | `-`     | Name of the benchmark                                                                    
-**runs**      | `Number` | ✖        | `100`   | number of invocations of the `benchmark`                                                 
+**name**      | `String` | ✔        | `-`     | Name of the Job                                                                          
+**runs**      | `Number` | ✖        | `100`   | number of invocations for the `benchmark`                                                
 **benchmark** | `Object` | ✔        | `-`     | a [`command`](#command) object to run as the benchmark                                   
 **before**    | `Array`  | ✖        | `[]`    | an array of [`command`](#command) objects to run before executing the `benchmark` command
 **after**     | `Array`  | ✖        | `[]`    | an array of [`command`](#command) objects to run after executing the `benchmark` command 
@@ -82,14 +82,14 @@ Used for invoking all command-line programs, taking either a map of configuratio
 }
 ```
 
-name        | Type      | required | default          | Description                                                           
------------ | --------- | -------- | ---------------- | ----------------------------------------------------------------------
-name        | `String`  | ✖        | `command` value  | Title of the step to be shown in the UI                               
-command     | `String`  | ✔        | `-`              | Command to run via the shell                                          
-background  | `Boolean` | ✖        | `false`          | Whether or not this step should run in the background (default: false)
-timeout     | `Number`  | ✖        | `30000`          | Elapsed time in milliseconds the command can run **without output**.  
-cwd         | `String`  | ✖        | application root | In which directory to run this command                                
-environment | `Map`     | ✖        | `-`              | Additional environmental variables, locally scoped to command         
+name        | Type      | required | default          | Description                                                         
+----------- | --------- | -------- | ---------------- | --------------------------------------------------------------------
+name        | `String`  | ✖        | `command` value  | Title of the step to be shown in the UI                             
+command     | `String`  | ✔        | `-`              | Command to run via the shell                                        
+background  | `Boolean` | ✖        | `false`          | Whether or not this step should run in the background               
+timeout     | `Number`  | ✖        | `30000`          | Elapsed time in milliseconds the command can run **without output**.
+cwd         | `String`  | ✖        | application root | In which directory to run this command                              
+environment | `Map`     | ✖        | `-`              | Additional environmental variables, locally scoped to command       
 
 ---
 
