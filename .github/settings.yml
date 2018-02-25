@@ -1,7 +1,7 @@
 repository:
-  name: schema
+  name: schema-bench
   description: JSON Schema for Bench CI configuration
-  topics: schema, benchci
+  topics: schema, benchmark, benchci
   homepage: https://schemas.bench.ci/
   private: false
   has_issues: true

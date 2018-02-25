@@ -15,7 +15,7 @@ version                | status
 Available as an `npm` package for validation purposes, compatible with any [JSON Schema][] validation tool
 
 ```bash
-npm install --production --save @benchci/schema
+npm install --production --save @benchci/schema-bench
 ```
 
 ---
@@ -25,14 +25,14 @@ npm install --production --save @benchci/schema
 > Github: [@BenchCI](https://github.com/benchci) •
 > Twitter: [@Bench_CI](https://twitter.com/bench_ci)
 
-[license-image]: https://img.shields.io/github/license/benchci/schema.svg?style=flat-square
+[license-image]: https://img.shields.io/github/license/benchci/schema-bench.svg?style=flat-square
 [license-url]: http://choosealicense.com/licenses/isc/
 
-[npm-url]: https://www.npmjs.com/package/@benchci/schema
-[npm-version]: https://img.shields.io/npm/v/@benchci/schema.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/@benchci/schema-bench
+[npm-version]: https://img.shields.io/npm/v/@benchci/schema-bench.svg?style=flat-square
 
-[travis-image]: https://img.shields.io/travis/BenchCI/schema.svg?style=flat-square
-[travis-url]: https://travis-ci.org/BenchCI/schema
+[travis-image]: https://img.shields.io/travis/BenchCI/schema-bench.svg?style=flat-square
+[travis-url]: https://travis-ci.org/BenchCI/schema-bench
 
 [bench ci]: https://www.bench.ci
 [json schema]: http://json-schema.org
