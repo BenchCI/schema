@@ -1,4 +1,4 @@
-# Bench Schema [![version][npm-version]][npm-url] [![License][license-image]][license-url] [![Build Status][travis-image]][travis-url] [![Downloads][npm-downloads]][npm-url] [![Coverage Status][codeclimate-coverage]][codeclimate-url]
+# Bench Schema [![version][npm-version]][npm-url] [![License][license-image]][license-url] [![Build Status][travis-image]][travis-url] [![Downloads][npm-downloads]][npm-url]
 
 > Schema for [Bench CI][] configuration.
 
@@ -24,9 +24,6 @@ npm install --production --save @bench/schema
 > License: [ISC][license-url] •
 > Github: [@BenchCI](https://github.com/benchci) •
 > Twitter: [@Bench_CI](https://twitter.com/bench_ci)
-
-[codeclimate-coverage]: https://api.codeclimate.com/v1/badges/xxxx/test_coverage
-[codeclimate-url]: https://codeclimate.com/github/benchci/schema
 
 [license-image]: https://img.shields.io/github/license/benchci/schema.svg?style=flat-square
 [license-url]: http://choosealicense.com/licenses/isc/
