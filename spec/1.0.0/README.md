@@ -75,19 +75,28 @@ Acceptable file name must match the following pattern:
 
 ---
 
-### version
+### `bench.json`
+
+name        | type     | required | default | description               
+----------- | -------- | -------- | ------- | --------------------------
+**version** | `Object` | ✔        | `-`     | Schema [Version](#version)
+**jobs**    | `Object` | ✖        | `-`     | [Jobs](#jobs)             
+
+---
+
+### Version
 
 The version of this spec your Bench file uses. Format must follow [semver][].
 
 ---
 
-### jobs
+### Jobs
 
 An array that contains at least one [`benchmark`](#benchmark) object.
 
 ---
 
-### benchmark
+### Benchmark
 
 ```json
 {
@@ -138,5 +147,7 @@ environment | `Map`     | ✖        | `-`                  | Additional environ
 ---
 
 [json]: https://www.json.org/
+
 [semver]: https://semver.org
+
 [yaml]: http://www.yaml.org/
