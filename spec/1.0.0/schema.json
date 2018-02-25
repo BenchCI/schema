@@ -1,7 +1,8 @@
 {
   "$id": "https://schemas.bench.ci/bench/1.0.0",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Bench CI schema",
+  "title": "Bench CI Schema",
+  "description": "JSON Schema for Bench CI config",
   "definitions": {
     "nonEmptyString": {
       "type": "string",
@@ -34,7 +35,7 @@
             },
             "timeout": {
               "type":"number",
-              "min": 1,
+              "minimum": 1,
               "default": 100
             },
             "cwd": {
@@ -75,7 +76,7 @@
           },
           "runs": {
             "type": "number",
-            "min": 1,
+            "minimum": 1,
             "default": 100
           },
           "benchmark": {
