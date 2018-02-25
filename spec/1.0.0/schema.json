@@ -1,0 +1,94 @@
+{
+  "$id": "https://schema.bench.ci/v1.0.0",
+  "title": "Bench CI schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "commands": {
+      "oneOf": [
+        { "$ref": "#/definitions/nonEmptyString" },
+        { "type": "array", "uniqueItems": true, "items": { "$ref": "#/definitions/command" } }
+      ]
+    },
+    "command": {
+      "oneOf": [
+        { "$ref": "#/definitions/nonEmptyString" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "command"
+          ],
+          "properties": {
+            "name": {
+              "$ref": "#/definitions/nonEmptyString"
+            },
+            "command": {
+              "$ref": "#/definitions/nonEmptyString"
+            },
+            "background": {
+              "type": "boolean"
+            },
+            "timeout": {
+              "type":"number",
+              "min": 1,
+              "default": 100
+            },
+            "cwd": {
+              "$ref": "#/definitions/nonEmptyString"
+            },
+            "environment": {
+              "type": "object",
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "\\bv?(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-[\\da-z-]+(?:\\.[\\da-z-]+)*)?(?:\\+[\\da-z-]+(?:\\.[\\da-z-]+)*)?\\b"
+    },
+    "jobs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "benchmark"
+        ],
+        "properties": {
+          "name": {
+            "$ref": "#/definitions/nonEmptyString"
+          },
+          "runs": {
+            "type": "number",
+            "min": 1,
+            "default": 100
+          },
+          "benchmark": {
+            "$ref": "#/definitions/command"
+          },
+          "before": {
+            "$ref": "#/definitions/commands"
+          },
+          "after": {
+            "$ref": "#/definitions/commands"
+          }
+        }
+      }
+    }
+  }
+}

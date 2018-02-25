@@ -1,0 +1,17 @@
+version: 1.0.0
+
+jobs:
+  - name: response speed
+    runs: 10000
+    benchmark: node bench/response.js
+
+  - name: database migration
+    runs: 100
+    benchmark: node bench/migrate.js
+    before:
+      - name: prep
+        command: node bench/helpers/reset-db.js
+    after:
+      - name: cleanup
+        command: node bench/helpers/cleanup.js
+        background: true

@@ -1,0 +1,41 @@
+{
+  "version": "0.0.0-development",
+  "name": "@bench/schema",
+  "description": "JSON Schema for Bench CI configuration.",
+  "author": "Ahmad Nassri <ahmad@benchci.com> (https://www.bench.ci/)",
+  "homepage": "https://github.com/benchci/schema",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benchci/schema.git"
+  },
+  "license": "ISC",
+  "main": "spec/latest/schema.json",
+  "keywords": [
+    "bench",
+    "benchci",
+    "benchmark",
+    "benchmarkci",
+    "jsonschema",
+    "schema"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "spec"
+  ],
+  "bugs": {
+    "url": "https://github.com/benchci/schema/issues"
+  },
+  "scripts": {
+    "pretest": "npm run test:codeclimate",
+    "test": "npm run test:tap",
+    "test:codeclimate": ".scripts/codeclimate analyze",
+    "test:tap": "tap test --100 --coverage-report=lcov --no-browser"
+  },
+  "devDependencies": {
+    "ajv": "^6.1.1",
+    "js-yaml": "^3.10.0",
+    "tap": "^11.1.1"
+  }
+}
