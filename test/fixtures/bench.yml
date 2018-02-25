@@ -4,10 +4,15 @@ jobs:
   - name: response speed
     runs: 10000
     benchmark: node bench/response.js
+    environment:
+      - node:9
+      - node:8
+      - node:6
 
   - name: database migration
     runs: 100
     benchmark: node bench/migrate.js
+    environment: node:9
     before:
       - name: prep
         command: node bench/helpers/reset-db.js
