@@ -76,10 +76,10 @@
                 "/var/www"
               ]
             },
-            "environment": {
-              "$id": "#/definitions/command/properties/environment",
-              "title": "Environments",
-              "description": "additional environment variables, locally scoped to command",
+            "env": {
+              "$id": "#/definitions/command/properties/env",
+              "title": "Command Env",
+              "description": "Environmental variables, locally scoped to the command",
               "type": "object",
               "uniqueItems": true,
               "examples": [
@@ -159,6 +159,25 @@
             "title": "Job Post-Benchmark Steps",
             "description": "List of Command objects to run after executing the benchmark command",
             "$ref": "#/definitions/commands"
+          },
+          "environment": {
+            "$id": "#/properties/jobs/items/environment",
+            "title": "Job Environment",
+            "description": "List of Environments to run this job in",
+            "oneOf": [
+              { "$ref": "#/definitions/nonEmptyString" },
+              {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "examples": [
+              "node:8-alpine",
+              "node:8-slim"
+            ]
           }
         }
       }
