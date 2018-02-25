@@ -18,6 +18,9 @@
     "jsonschema",
     "schema"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=6"
   },
