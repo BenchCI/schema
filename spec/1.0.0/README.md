@@ -6,22 +6,28 @@ Bench files are required to be saved in `UTF-8` encoding, other encodings are fo
 
 ### File Naming:
 
-Acceptable file name must be one of the following:
+Acceptable file name must match the following pattern:
 
+```regex
+\.?bench(?:rc)?\.?(?:json|yaml|yml)?
+```
+
+###### Example
+
+- `bench.json`
 - `.bench.yml`
-- `.bench.json`
 - `.benchrc`
 
 ###### YAML Example
 
 > ```yml
 > version: 1.0.0
-> 
+>
 > jobs:
 >   - name: response speed
 >     runs: 10000
 >     benchmark: node bench/response.js
-> 
+>
 >   - name: database migration
 >     runs: 100
 >     benchmark: node bench/migrate.js
@@ -71,7 +77,7 @@ Acceptable file name must be one of the following:
 
 ### version
 
-The version of this spec your bench file follows
+The version of this spec your Bench file uses. Format must follow [semver][].
 
 ---
 
@@ -120,13 +126,17 @@ Used for invoking all command-line programs, taking either a map of configuratio
 }
 ```
 
-name        | required | Type      | default              | Description                                                           
------------ | -------- | --------- | -------------------- | ----------------------------------------------------------------------
-name        | ✖        | `String`  | full `command` value | Title of the step to be shown in the UI                               
-command     | ✔        | `String`  | `-`                  | Command to run via the shell                                          
-background  | ✖        | `Boolean` | `false`              | Whether or not this step should run in the background (default: false)
-timeout     | ✖        | `Number`  | `30000`              | Elapsed time in milliseconds the command can run **without output**.  
-cwd         | ✖        | `String`  | application root     | In which directory to run this command                                
-environment | ✖        | `Map`     | `-`                  | Additional environmental variables, locally scoped to command         
+name        | Type      | required | default              | Description                                                           
+----------- | --------- | -------- | -------------------- | ----------------------------------------------------------------------
+name        | `String`  | ✖        | full `command` value | Title of the step to be shown in the UI                               
+command     | `String`  | ✔        | `-`                  | Command to run via the shell                                          
+background  | `Boolean` | ✖        | `false`              | Whether or not this step should run in the background (default: false)
+timeout     | `Number`  | ✖        | `30000`              | Elapsed time in milliseconds the command can run **without output**.  
+cwd         | `String`  | ✖        | application root     | In which directory to run this command                                
+environment | `Map`     | ✖        | `-`                  | Additional environmental variables, locally scoped to command         
 
 ---
+
+[json]: https://www.json.org/
+[semver]: https://semver.org
+[yaml]: http://www.yaml.org/
