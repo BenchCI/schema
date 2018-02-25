@@ -2,7 +2,7 @@
 
 ## Data Structure & File Format
 
-Bench files are required to be saved in `UTF-8` encoding, other encodings are forbidden. Allowed formats are: limited to [`JSON`][json] & [`YAML`][yaml].
+Bench files are required to be saved in `UTF-8` encoding, other encodings are forbidden. Allowed formats are limited to [`JSON`][json] & [`YAML`][yaml].
 
 Summary of Bench object types:
 
