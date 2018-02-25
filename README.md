@@ -32,8 +32,8 @@ npm install --production --save @benchci/schema
 [npm-url]: https://www.npmjs.com/package/@benchci/schema
 [npm-version]: https://img.shields.io/npm/v/@benchci/schema.svg?style=flat-square
 
-[travis-image]: https://img.shields.io/travis/benchci/schema.svg?style=flat-square
-[travis-url]: https://travis-ci.org/benchci/schema
+[travis-image]: https://img.shields.io/travis/BenchCI/schema.svg?style=flat-square
+[travis-url]: https://travis-ci.org/BenchCI/schema
 
 [bench ci]: https://www.bench.ci
 [json schema]: http://json-schema.org

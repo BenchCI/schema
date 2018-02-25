@@ -1,5 +1,5 @@
 {
-  "$schema": "../../spec/schema.json",
+  "$schema": "../../spec/latest/schema.json",
   "version": "1.0.0",
   "jobs": [
     {
