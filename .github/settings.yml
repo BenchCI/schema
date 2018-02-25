@@ -3,7 +3,7 @@ repository:
   description: JSON Schema for Bench CI configuration
   topics: schema, benchci
   homepage: https://schemas.bench.ci/
-  private: true
+  private: false
   has_issues: true
   has_wiki: false
   has_downloads: true
