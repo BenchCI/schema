@@ -18,6 +18,8 @@
       "oneOf": [
         { "$ref": "#/definitions/nonEmptyString" },
         {
+          "title": "Command",
+          "description": "Used for invoking all command-line programs",
           "type": "object",
           "additionalProperties": false,
           "required": [
@@ -31,7 +33,8 @@
               "$ref": "#/definitions/nonEmptyString"
             },
             "background": {
-              "type": "boolean"
+              "type": "boolean",
+              "default": false
             },
             "timeout": {
               "type":"number",
