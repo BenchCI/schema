@@ -1,0 +1,61 @@
+repository:
+  name: schema
+  description: JSON Schema for Bench CI configuration
+  topics: schema, benchci
+  homepage: https://schemas.bench.ci/
+  private: true
+  has_issues: true
+  has_wiki: false
+  has_downloads: true
+  has_projects: false
+  default_branch: master
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: true
+
+labels:
+  - name: bug
+    color: EE3F46
+
+  - name: security
+    color: EE3F46
+
+  - name: chore
+    color: FEF2C0
+
+  - name: discussion
+    color: CC317C
+
+  - name: question
+    color: CC317C
+
+  - name: enhancement
+    color: 5EBEFF
+
+  - name: optimizaiton
+    color: 5EBEFF
+
+  - name: feature
+    color: 91CA55
+
+  - name: in progress
+    color: FBCA04
+
+  - name: watchlist
+    color: FBCA04
+
+  - name: invalid
+    color: D2DAE1
+
+  - name: wontfix
+    color: D2DAE1
+
+  - name: duplicate
+    color: D2DAE1
+
+  - name: on hold
+    color: D2DAE1
+
+teams:
+  - name: Engineering
+    permission: push
