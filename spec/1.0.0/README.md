@@ -6,13 +6,13 @@ Bench files are required to be saved in `UTF-8` encoding, other encodings are fo
 
 Summary of Bench object types:
 
-- [version](#version)
-- [jobs](#jobs)
-  - [name](#jobs)
-  - [runs](#jobs)
-  - [benchmark](#command)
-  - [before](#command)
-  - [after](#command)
+- [bench.json](#benchjson)
+  - [jobs](#jobs)
+    - [name](#jobs)
+    - [runs](#jobs)
+    - [benchmark](#command)
+    - [before](#command)
+    - [after](#command)
 
 ### File Naming
 
@@ -32,14 +32,17 @@ Acceptable file name must match the following pattern:
 
 ## `bench.json`
 
-name        | type     | required | default | description               
------------ | -------- | -------- | ------- | --------------------------
-**version** | `Object` | ✔        | `-`     | Schema [Version](#version)
-**jobs**    | `Object` | ✖        | `-`     | [Jobs](#jobs)             
+```json
+{
+  "version": "1.0.0",
+  "jobs": []
+}
+```
 
-### Version
-
-The version of this spec your Bench file uses. Format must follow [semver][].
+name        | type     | required | default | description                                
+----------- | -------- | -------- | ------- | -------------------------------------------
+**version** | `String` | ✔        | `-`     | Spec version. Format must follow [semver][]
+**jobs**    | `Object` | ✖        | `-`     | [Jobs](#jobs)                              
 
 ### Jobs
 
@@ -61,14 +64,14 @@ An array that contains at least one [`job`](#job) object.
 }
 ```
 
-name            | type     | required | default | description                                                                              
---------------- | -------- | -------- | ------- | -----------------------------------------------------------------------------------------
-**name**        | `String` | ✔        | `-`     | Name of the Job                                                                          
-**runs**        | `Number` | ✖        | `100`   | number of invocations for the `benchmark`                                                
-**benchmark**   | `Object` | ✔        | `-`     | a [`command`](#command) object to run as the benchmark                                   
-**before**      | `Array`  | ✖        | `[]`    | an array of [`command`](#command) objects to run before executing the `benchmark` command
-**after**       | `Array`  | ✖        | `[]`    | an array of [`command`](#command) objects to run after executing the `benchmark` command 
-**environment** | `Array`  | ✖        | `[]`    | [Environment][environments-schema] Name to run this job in                        
+name            | type      | required | default | description                                                                              
+--------------- | --------- | -------- | ------- | -----------------------------------------------------------------------------------------
+**name**        | `String`  | ✔        | `-`     | Name of the Job                                                                          
+**runs**        | `Integer` | ✖        | `100`   | number of invocations for the `benchmark`                                                
+**benchmark**   | `Object`  | ✔        | `-`     | a [`command`](#command) object to run as the benchmark                                   
+**before**      | `Array`   | ✖        | `[]`    | an array of [`command`](#command) objects to run before executing the `benchmark` command
+**after**       | `Array`   | ✖        | `[]`    | an array of [`command`](#command) objects to run after executing the `benchmark` command 
+**environment** | `Array`   | ✖        | `[]`    | [Environment][environments-schema] Name to run this job in                               
 
 ###### Short Form
 
@@ -96,14 +99,14 @@ Used for invoking all command-line programs, taking either a map of configuratio
 }
 ```
 
-name       | Type      | required | default          | Description                                                         
----------- | --------- | -------- | ---------------- | --------------------------------------------------------------------
-name       | `String`  | ✖        | `command` value  | Title of the step to be shown in the UI                             
-command    | `String`  | ✔        | `-`              | Command to run via the shell                                        
-background | `Boolean` | ✖        | `false`          | Whether or not this step should run in the background               
-timeout    | `Number`  | ✖        | `30000`          | Elapsed time in milliseconds the command can run **without output**.
-cwd        | `String`  | ✖        | application root | In which directory to run this command                              
-env        | `Map`     | ✖        | `-`              | Environmental variables, locally scoped to the command              
+name           | type      | required | default          | description                                                         
+-------------- | --------- | -------- | ---------------- | --------------------------------------------------------------------
+**name**       | `String`  | ✖        | `command` value  | Title of the step to be shown in the UI                             
+**command**    | `String`  | ✔        | `-`              | Command to run via the shell                                        
+**background** | `Boolean` | ✖        | `false`          | Whether or not this step should run in the background               
+**timeout**    | `Integer` | ✖        | `30000`          | Elapsed time in milliseconds the command can run **without output**.
+**cwd**        | `String`  | ✖        | application root | In which directory to run this command                              
+**env**        | `Map`     | ✖        | `-`              | Environmental variables, locally scoped to the command              
 
 ---
 
@@ -167,7 +170,7 @@ env        | `Map`     | ✖        | `-`              | Environmental variables
 >         background: true
 > ```
 
-[environments-schema]: https://github.com/BenchCI/environments
 [json]: https://www.json.org/
 [semver]: https://semver.org
 [yaml]: http://www.yaml.org/
+[environments-schema]: https://github.com/BenchCI/environments
