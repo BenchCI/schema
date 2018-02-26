@@ -57,7 +57,7 @@
               "$id": "#/definitions/command/properties/timeout",
               "title": "Command Timeout",
               "description": "Elapsed time in milliseconds the command can run without output",
-              "type":"number",
+              "type":"integer",
               "minimum": 1,
               "default": 100,
               "examples": [
@@ -138,7 +138,7 @@
             "$id": "#/properties/jobs/items/runs",
             "title": "Job Runs",
             "description": "number of invocations for the benchmark",
-            "type": "number",
+            "type": "integer",
             "minimum": 1,
             "default": 100
           },
